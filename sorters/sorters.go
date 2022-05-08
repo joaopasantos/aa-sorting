@@ -40,6 +40,35 @@ func Insertion(array []int) {
 	}
 }
 
-func Quick() {
+func Quick(array []int, low int, high int) {
+	if low < high {
+		p := partition(array, low, high)
+		Quick(array, low, p)
+		Quick(array, p+1, high)
+	}
+}
 
+func partition(array []int, low int, high int) int {
+	p := array[low]
+	i := low - 1
+	j := high + 1
+	for {
+		i++
+		for array[i] < p {
+			i++
+		}
+
+		j--
+		for p < array[j] {
+			j--
+		}
+
+		if i >= j {
+			return j
+		}
+
+		temp := array[i]
+		array[i] = array[j]
+		array[j] = temp
+	}
 }
