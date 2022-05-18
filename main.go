@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/joaopasantos/aa-sorting/sorters"
 )
@@ -27,6 +28,8 @@ func main() {
 			sorters.Insertion(array)
 		case 4:
 			sorters.Quick(array, 0, len(array)-1)
+		case 0:
+			os.Exit(0)
 		default:
 			fmt.Println("Opção Inválida.")
 			inputIsValid = false
