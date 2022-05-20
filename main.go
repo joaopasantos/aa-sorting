@@ -42,7 +42,7 @@ func inputNumbers(array []int) []int {
 	for i := 1; i <= 10; i++ {
 		fmt.Printf("Insira o número que ocupará a posição %d do vetor: ", i)
 		var number int
-		_, err := fmt.Scanf("%d", &number)
+		_, err := fmt.Scanf("%d\n", &number)
 		if err != nil {
 			panic(err)
 		}
